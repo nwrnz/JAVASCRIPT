@@ -30,3 +30,37 @@ console.log("6" + 4);
 console.log("6" - 4); 
 console.log("6" * 4); 
 console.log("6" / 4); 
+
+let numero = 1;
+let numeroString = String(numero);
+let string ="86";
+let stringNumero = Number(string);
+
+console.log(typeof numero, numero);
+console.log(typeof numeroString, numeroString);
+console.log(typeof string, string);
+console.log(typeof stringNumero, stringNumero)
+let numero2 = 3
+// condição 
+if (testeNull != null) {
+    console.log("Não é nulo ")
+}else if (numero2> 4) {
+    console.log("Numero maior do que 4")
+}
+else{
+    console.log("É nulo")
+}
+
+// tipos de variaveis em javascript
+
+//let
+
+let teste =2;
+teste= 4;
+
+if (teste == 4) {
+    console.log(teste);
+}
+
+const pi = 3.14;
+pi = 3.15
