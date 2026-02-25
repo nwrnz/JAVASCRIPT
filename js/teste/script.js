@@ -63,4 +63,28 @@ if (teste == 4) {
 }
 
 const pi = 3.14;
-pi = 3.15
+
+if (teste > 2 || teste < 7){
+    console.log(teste);
+}
+for (let i = 0; i < 3; i++){
+    console.log(i)
+}
+
+let n1 = 24
+let n2 = 12
+soma = n1+n2
+console.log(soma)
+
+if (soma >40){
+    console.log("É maior")
+}else{
+    console.log("É menor")
+}
+
+for ( let i = soma; i > 10; i--){
+    console.log("Valor de i="+ i)
+    if ( i == 10){
+        console.log("É igual  a 10!")
+    }
+}
