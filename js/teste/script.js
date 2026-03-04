@@ -88,3 +88,16 @@ for ( let i = soma; i > 10; i--){
         console.log("É igual  a 10!")
     }
 }
+
+// função: bloco de  código reutilizavel e que pode receber ou não
+// mais entradas (parâmentros) e pode ou não retornar uma
+//saida (return)
+
+function mostrarValorTela( numero ){
+    return numero * 3;
+}
+let Valorfinal = mostrarValorTela(2);
+console.log(Valorfinal);
+
+let teste1 = prompt ("digite um valor:")
+console.log(teste);
