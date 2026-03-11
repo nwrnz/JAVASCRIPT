@@ -84,9 +84,6 @@ console.log(res)
         contador--;
     }
 
-
-
-
     let nu1 = 5
     let nu2 =45
     function somas (nu1,nu2){
@@ -94,6 +91,9 @@ console.log(res)
     }
     let resultado = somas (2)
     console.log(resultado)
+
+
+
 
     function imparpar (n1){
         if (n1 /2 ==0 ){
