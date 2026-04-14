@@ -1,50 +1,34 @@
-const input = document.getElementById('todo-input');
-const addBtn = document.getElementById('add-btn');
-const todoList = document.getElementById('todo-list');
+const campoTarefa = document.getElementById('campoTarefa');
+const botaoAdicionar = document.getElementById('botaoAdicionar');
+const listaTarefas = document.getElementById('listaTarefas');
 
-function addTask() {
-    const taskText = input.value.trim();
-    
-    if (taskText === "") {
+function adicionarTarefa() {
+    const textoTarefa = campoTarefa.value;
+
+    if (textoTarefa === "") {
         alert("Por favor, digite uma tarefa!");
         return;
     }
 
-    // Criar o elemento li
-    const li = document.createElement('li');
-    
-    // Criar o span para o texto da tarefa
-    const span = document.createElement('span');
-    span.textContent = taskText;
-    
-    // Criar o botão de remover
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Remover';
-    removeBtn.className = 'remove-btn';
-    
-    // Evento para remover a tarefa
-    removeBtn.onclick = function() {
-        li.remove();
-    };
+    const itemLista = document.createElement('li');
 
-    // Montar o item da lista
-    li.appendChild(span);
-    li.appendChild(removeBtn);
-    
-    // Adicionar à lista
-    todoList.appendChild(li);
+    const texto = document.createElement('span');
+    texto.textContent = textoTarefa;
 
-    // Limpar o input
-    input.value = "";
-    input.focus();
+    const botaoRemover = document.createElement('button');
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.className = 'botao-remover';
+
+   botaoRemover.addEventListener('click', function() {
+    itemLista.remove();
+});
+
+    itemLista.appendChild(texto);   
+    itemLista.appendChild(botaoRemover);
+
+    listaTarefas.appendChild(itemLista);
+
+    campoTarefa.value = "";
 }
 
-// Adicionar tarefa ao clicar no botão
-addBtn.addEventListener('click', addTask);
-
-// Adicionar tarefa ao pressionar Enter
-input.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        addTask();
-    }
-});
+botaoAdicionar.addEventListener('click', adicionarTarefa);
