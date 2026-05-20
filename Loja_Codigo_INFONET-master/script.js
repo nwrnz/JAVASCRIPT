@@ -92,6 +92,42 @@ function mudarQuantidade(id, valor){
             }
         }
         return produto;
-    });
+    }).filter(produto=> produto.quantidade > 0);
+    
     renderizarCarrinho();
 }
+function removerProduto(id){
+    produtosCarrinho = produtosCarrinho .filter(produto => produto.id != id);
+
+    renderizarCarrinho();
+    
+}
+const btnLimpar= document.getElementById("limpar");
+btnLimpar.addEventListener("click", function(){
+    if(produtosCarrinho.length > 0){
+        produtosCarrinho = [];
+        renderizarCarrinho();}
+
+})
+const btnComprar= document.getElementById("comprar");
+btnComprar.addEventListener("click", function(){
+    let = textoAlerta = document.getElementById("texto-comprar")
+    if(produtosCarrinho.length > 0){
+        produtosCarrinho = [];
+        renderizarCarrinho();
+        
+        textoAlerta.textContent ="Sucesso na compra!"
+        textoAlerta.style.color ="green";
+        setTimeout(() => {
+            textoAlerta.textContent=""
+        }, 1000);
+    }
+    else{
+            textoAlerta.textContent="Sem itens para comprar!";
+            textoAlerta.style.color="red";
+            setTimeout(()=>{
+                textoAlerta.textContent=""
+            }, 1000)
+
+        }
+})
